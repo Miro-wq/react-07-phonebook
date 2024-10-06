@@ -1,22 +1,24 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { nanoid } from 'nanoid';
-import { addContact, deleteContact, setFilter } from '../redux/contactSlice';
+import {
+  fetchContacts,
+  addContact,
+  deleteContact,
+  setFilter,
+} from '../redux/contactSlice';
 import ContactForm from '../ContactForm/ContactForm';
 import ContactList from '../ContactList/ContactList';
 import Filter from '../Filter/Filter';
-// import { persistStore } from 'redux-persist';
 
 const App = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts.contacts);
+  const contacts = useSelector(state => state.contacts.items);
   const filter = useSelector(state => state.contacts.filter);
+  const isLoading = useSelector(state => state.contacts.isLoading);
+  const error = useSelector(state => state.contacts.error);
 
   useEffect(() => {
-    const savedContacts = JSON.parse(localStorage.getItem('contacts'));
-    if (savedContacts) {
-      savedContacts.forEach(contact => dispatch(addContact(contact)));
-    }
+    dispatch(fetchContacts());
   }, [dispatch]);
 
   const addNewContact = (name, number) => {
@@ -28,13 +30,7 @@ const App = () => {
       return;
     }
 
-    const newContact = {
-      id: nanoid(),
-      name,
-      number,
-    };
-
-    dispatch(addContact(newContact));
+    dispatch(addContact({ name, number }));
   };
 
   const handleDeleteContact = id => {
@@ -59,6 +55,8 @@ const App = () => {
       <ContactForm onAddContact={addNewContact} />
       <h2>Contacts</h2>
       <Filter onChange={handleFilterChange} />
+      {isLoading && <p>Loadnng contacts...</p>}
+      {error && <p>Error: {error}</p>}
       <ContactList contacts={filteredContacts} onDelete={handleDeleteContact} />
     </div>
   );
