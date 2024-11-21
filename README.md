@@ -5,7 +5,7 @@
 [![My Skills](https://skillicons.dev/icons?i=html,css,js,react,redux,npm,webpack,vscode)](https://skillicons.dev)
 
 ![Description](https://img.shields.io/badge/Description-purple?style=for-the-badge)
-This project refactors the Contact Book app by integrating state management with Redux Toolkit. It includes actions for saving, deleting contacts, and updating the filter. The app uses `redux-persist` to store the contacts in `localStorage` and connects React components with Redux using `react-redux`. The initial Redux state consists of an empty contacts array and a filter string.
+>This project refactors the Contact Book app by integrating state management with Redux Toolkit. It includes actions for saving, deleting contacts, and updating the filter. The app uses `redux-persist` to store the contacts in `localStorage` and connects React components with Redux using `react-redux`. The initial Redux state consists of an empty contacts array and a filter string.
 
 ![Features](https://img.shields.io/badge/Features-purple?style=for-the-badge)
 
