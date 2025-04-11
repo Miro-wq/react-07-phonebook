@@ -1,20 +1,17 @@
-# ✨ Contact book, integrating state management with Redux Toolkit ✨
+# Contact book, integrating state management with Redux Toolkit 
 
-## 🛠 Tools used
+## Description
 
-[![My Skills](https://skillicons.dev/icons?i=html,css,js,react,redux,npm,webpack,vscode)](https://skillicons.dev)
-
-![Description](https://img.shields.io/badge/Description-purple?style=for-the-badge)
 >This project refactors the Contact Book app by integrating state management with Redux Toolkit. It includes actions for saving, deleting contacts, and updating the filter. The app uses `redux-persist` to store the contacts in `localStorage` and connects React components with Redux using `react-redux`. The initial Redux state consists of an empty contacts array and a filter string.
 
-![Features](https://img.shields.io/badge/Features-purple?style=for-the-badge)
+## Features 
 
 - **Add Contacts**: Users can add contacts with a name and phone number. The application ensures that contact names adhere to a specific pattern and prevents the addition of duplicate names. 
 - **Search and Filter**: A search field is provided to filter contacts by name, with case-insensitive matching.
 - **Contact List Management**: Users can view a list of all contacts and remove any contact they no longer need.
 - **Component Refactoring**: The application is refactored from a single component into multiple independent components, enhancing modularity and readability.
 
-![Key Learning Objectives:](https://img.shields.io/badge/Key%20Learning%20Objectives-purple?style=for-the-badge)
+## Key Objectives: 
 
 - **State Management**: Manage and update state in React, particularly how to structure state to store multiple properties and handle user inputs in a controlled manner.
 - **Componentization**: The importance of breaking down an application into smaller, reusable components became evident. This approach not only simplifies development but also makes the codebase easier to maintain and scale.
